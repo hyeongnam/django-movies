@@ -1,0 +1,20 @@
+{% extends 'movies/base.html' %}
+
+{% block body %}
+    <h1>Detail</h1>
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.id }}번째 영화</p>
+    <p>영화 제목 : {{ movie.title_origin }}</p>
+    <p>추천수 : {{ movie.vote_count }}</p>
+    <p>개봉일 : {{ movie.open_date }}</p>
+    <p>장르 : {{ movie.genre }}</p>
+    <p>평점 : {{ movie.score }}</p>
+    <p>평론 : {{ movie.description }}</p>
+    <hr/>
+    <a href="/movies/">BACK</a><br/>
+    <form action="{% url 'movies:delete' movie.id %}" method="post">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="[삭제하기]"/>
+    </form>
+    <a href="{% url 'movies:edit' movie.id %}">수정하기</a>
+{% endblock %}
