@@ -33,7 +33,8 @@ def new(request):
 
 
 @require_GET
-def detail(request, movie_id):
+# movie_id 에 맞는 movie 데이터를 넘겨줘야 함
+def detail(request, movie_id): # /movies/3/
     movie = get_object_or_404(Movie, id=movie_id)
     context = {'movie': movie}
     return render(request, 'movies/detail.html',context)

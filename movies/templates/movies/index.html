@@ -5,9 +5,10 @@
     <hr />
     <a href="{% url 'movies:new' %}">새 영화 등록</a>
     {% for movie in movies %}
-        <p>글 번호 : {{ movie.id }}</p>
-        <p><a href="{% url 'movies:detail' movie.id %}">영화 제목 : {{ movie.title }}</a></p>
-        <p>영화 평점 : {{ movie.score }}</p>
+        <p><b><a href="{% url 'movies:detail' movie.id %}">영화 제목 : {{ movie.title }}</a></b></p>
+        <p>장르 : {{ movie.genre }}</p>
+        <p>평점 : {{ movie.score }}</p>
+        <p>개봉일 : {{ movie.open_date }}</p>
         <hr />
     {% endfor %}
 {% endblock %}
