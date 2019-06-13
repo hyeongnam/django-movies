@@ -19,7 +19,7 @@
         <label for="poster_url">Poster_Url</label><br />
         <input name="poster_url" id="poster_url" type="text" value="{{ movie.poster_url }}" /><br />
         <label for="description">Description</label><br />
-        <textarea name="description" id="description">{{ board.description }}</textarea><br />
+        <textarea name="description" id="description" type="text" >{{ movie.description }}</textarea><br />
         <input type="submit" />
     </form>
     <a href="{% url 'movies:index' %}">BACK</a>
